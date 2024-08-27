@@ -1,33 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Define la fuente personalizada */
+@font-face {
+  font-family: 'Ger';
+  src: url('../fonts/Ger.ttf') format('truetype');
+}
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-text: 'Ger';
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* src/app/globals.css */
+@import "~bulma/css/bulma.css";
+
+/* Reset de estilos */
+html, body, #__next {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+element.style {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(43deg, white 0%, rgb(165, 243, 252) 46%, white 100%);
+    color: #333;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#_next {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
 }

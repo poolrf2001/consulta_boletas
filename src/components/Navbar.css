@@ -1,0 +1,113 @@
+/* src/components/Navbar.css */
+
+@font-face {
+  font-family: 'Ger';
+  src: url('../fonts/Ger.ttf') format('truetype');
+}
+
+:root {
+  --font-text: 'Ger';
+}
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(to right, rgb(30, 64, 175), #0085FF, rgb(30, 64, 175));
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-title {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Estilos personalizados para el botón de logout */
+/* From Uiverse.io by nikk7007 */ 
+.logout-button {
+  --color: #e3342f;
+  --color2: rgb(10, 25, 30);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 3px solid var(--color); /* Borde más grueso */
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 600; /* Texto más grueso */
+  font-size: 18px; /* Texto más grande */
+  font-family: var(--font-text);
+  text-transform: uppercase;
+  color: var(--color);
+}
+ 
+.logout-button::after, .logout-button::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+}
+ 
+.logout-button::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+ 
+.logout-button:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+ 
+.logout-button:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+ 
+.logout-button:hover {
+  color: var(--color2);
+}
+ 
+.logout-button:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .logout-button {
+    width: 100px;
+    text-align: center;
+    font-size: 1rem; /* Ajuste para pantallas más pequeñas */
+  }
+
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .logout-button {
+    width: 100px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+}
