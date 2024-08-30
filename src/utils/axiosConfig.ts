@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode'; // Asegurarse de que jwtDecode esté imp
 import { useRouter } from 'next/router';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/',
+  baseURL: 'https://boletadepago.munijauja.gob.pe/api/',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -56,7 +56,7 @@ axiosInstance.interceptors.response.use(
       if (refreshToken) {
         try {
           // Intentar refrescar el token de acceso
-          const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: refreshToken });
+          const response = await axios.post('http://boletadepago.munijauja.gob.pe//api/token/refresh/', { refresh: refreshToken });
           
           // Almacenar el nuevo token de acceso y refresh
           storeTokens(response.data.access, response.data.refresh);
