@@ -114,7 +114,7 @@ const Dashboard: React.FC = () => {
                     <p>Fecha: {boletaReciente ? boletaReciente.mes : 'Sin boleta disponible'}</p>
                   </div>
                   {boletaReciente && (
-                    <a href={`https://boletadepago.munijauja.gob.pe/${boletaReciente.pdf}`} download className="button">
+                    <a href={`https://boletadepago.munijauja.gob.pe${boletaReciente.pdf}`} download className="button">
                       DESCARGAR
                     </a>
                   )}
@@ -137,7 +137,7 @@ const Dashboard: React.FC = () => {
                         <td data-label="NOMBRE DEL ARCHIVO">{boleta.pdf.split('/').pop()}</td> {/* Mostrar el nombre del archivo PDF */}
                         <td data-label="MES">{boleta.mes}</td> {/* Mostrando el valor del campo mes tal cual */}
                         <td data-label="OPCIÓN">
-                          <a href={`https://boletadepago.munijauja.gob.pe/${boleta.pdf}`} download>
+                          <a href={`https://boletadepago.munijauja.gob.pe${boleta.pdf}`} download>
                             <button className="download-button" type="button">
                               <span className="download-button__text">Descargar</span>
                               <span className="download-button__icon">
