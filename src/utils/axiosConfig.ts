@@ -56,7 +56,7 @@ axiosInstance.interceptors.response.use(
       if (refreshToken) {
         try {
           // Intentar refrescar el token de acceso
-          const response = await axios.post('http://boletadepago.munijauja.gob.pe//api/token/refresh/', { refresh: refreshToken });
+          const response = await axios.post('http://boletadepago.munijauja.gob.pe/api/token/refresh/', { refresh: refreshToken });
           
           // Almacenar el nuevo token de acceso y refresh
           storeTokens(response.data.access, response.data.refresh);
