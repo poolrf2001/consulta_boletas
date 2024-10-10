@@ -10,27 +10,12 @@ const Dashboard: React.FC = () => {
   const [mostrarBoletasAnteriores, setMostrarBoletasAnteriores] = useState(false);
   const [trabajador, setTrabajador] = useState<string>('Cargando nombre...');
 
-  // Diccionario de meses
-  const meses: { [key: string]: string } = {
-    '01': 'ENERO',
-    '02': 'FEBRERO',
-    '03': 'MARZO',
-    '04': 'ABRIL',
-    '05': 'MAYO',
-    '06': 'JUNIO',
-    '07': 'JULIO',
-    '08': 'AGOSTO',
-    '09': 'SEPTIEMBRE',
-    '10': 'OCTUBRE',
-    '11': 'NOVIEMBRE',
-    '12': 'DICIEMBRE',
-  };
+// Función para extraer el mes textual
+const obtenerMesTexto = (fecha: string) => {
+  const mesTexto = fecha.split('-')[0]; // Extraer el mes como 'Julio'
+  return mesTexto.toUpperCase(); // Opcional: convertir a mayúsculas si lo deseas
+};
 
-  // Función para extraer el mes textual
-  const obtenerMesTexto = (fecha: string) => {
-    const mesNumero = fecha.split('-')[1]; // Extraer el mes como '08', '09', etc.
-    return meses[mesNumero] || 'Mes desconocido'; // Convertir el número al mes textual
-  };
 
   useEffect(() => {
     const fetchBoletas = async () => {
